@@ -157,27 +157,13 @@ function App() {
       </main>
 
       {/* Footer - Search Bar & Send Button */}
-      <Footer>
-        <form onSubmit={handleSubmit} className="w-full p-4 bg-white shadow-md">
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Ask a question..."
-              disabled={isLoading || !isIndexed}
-            />
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg disabled:opacity-50"
-              disabled={isLoading || !isIndexed}
-            >
-              Send
-            </button>
-          </div>
-        </form>
-      </Footer>
+     <Footer 
+  input={input}
+  setInput={setInput}
+  handleSubmit={handleSubmit}
+  isLoading={isLoading}
+  isIndexed={isIndexed}
+/>
     </div>
   );
 }

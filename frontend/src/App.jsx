@@ -23,7 +23,7 @@ function App() {
   const indexDocumentation = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:4000/api/index/${selectedCDP}`);
+      const response = await axios.get(`https://chat-bot-cdp.vercel.app/api/index/${selectedCDP}`);
       if (response.data.success) {
         setIsIndexed(true);
         setMessages(prev => [...prev, {
@@ -58,7 +58,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await axios.get(`http://localhost:4000/api/ask?query=${encodeURIComponent(userMessage)}`);
+      const response = await axios.get(`https://chat-bot-cdp.vercel.app/api/ask?query=${encodeURIComponent(userMessage)}`);
       setMessages(prev => [...prev, { type: 'bot', content: response.data.answer }]);
     } catch (error) {
       setMessages(prev => [...prev, {

@@ -44,7 +44,7 @@ function App() {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `https://chat-bot-cdp.vercel.app/api/index/${selectedCDP}`
+        `https://chat-backend-cdr8.onrender.com/api/index/${selectedCDP}`
       );
       if (response.data.success) {
         setIsIndexed(true);
@@ -88,7 +88,7 @@ function App() {
 
     try {
       const response = await axios.get(
-        `https://chat-bot-cdp.vercel.app/api/ask?query=${encodeURIComponent(
+        `https://chat-backend-cdr8.onrender.com/api/ask?query=${encodeURIComponent(
           userMessage
         )}`
       );

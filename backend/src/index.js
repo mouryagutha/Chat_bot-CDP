@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 const corsOptions = {
-  origin: "https://chat-bot-nine-phi.vercel.app",
+  origin: ["https://chat-bot-nine-phi.vercel.app", "http://localhost:5173"],
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));

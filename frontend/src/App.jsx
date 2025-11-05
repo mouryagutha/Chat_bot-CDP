@@ -44,7 +44,7 @@ function App() {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `https://chat-backend-cdr8.onrender.com/api/index/${selectedCDP}`
+        `http://localhost:4000/api/index/${selectedCDP}`
       );
       if (response.data.success) {
         setIsIndexed(true);
@@ -88,7 +88,7 @@ function App() {
 
     try {
       const response = await axios.get(
-        `https://chat-backend-cdr8.onrender.com/api/ask?query=${encodeURIComponent(
+        `http://localhost:4000/api/ask?query=${encodeURIComponent(
           userMessage
         )}`
       );
@@ -140,8 +140,8 @@ function App() {
           disabled={isLoading}
         >
           {isIndexed && selectedCDP === previousCDP
-            ? "Start Indexing"
-            : "Restart Indexing"}
+            ? "Indexed ✓"
+            : "Index Documentation"}
         </button>
       </div>
 

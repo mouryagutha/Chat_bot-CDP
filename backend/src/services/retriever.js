@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { index, docStore } = require("./indexer");
 require("dotenv").config();
 
-const genAI = new GoogleGenerativeAI('AIzaSyBd7ckDF3xDm22eVUsdj8kHtKrVbr5LhvU');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Retrieve answer from indexed documentation
 const retrieveAnswer = async (query) => {
